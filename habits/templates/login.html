@@ -1,0 +1,21 @@
+{% extends "utils/base.html" %}
+
+{% block start %}
+    <div class="loginRegistrationForm">
+        <h2>Enter Your Credentials</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {% include 'utils/messages.html' %}
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+             
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}

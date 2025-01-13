@@ -1,0 +1,503 @@
+/* Styling for body and entire html */
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: azure;
+}
+
+/* Navigation Bar */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: azure;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 15px;
+    padding: 5px;
+    font-family: 'Dancing Script', sans-serif;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav ul li {
+    padding: 5px 10px;
+    margin: 5px;
+    list-style-type: none;
+    border: 2px solid #1e1299;
+    border-radius: 5px;
+    background-color: #133e87;
+    cursor: pointer;
+}
+
+.nav ul li:hover {
+    background-color: azure;
+    color: black;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav ul li a:hover {
+    color: black;
+}
+
+/* Heading of Habit List */
+h1 {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Grid display */
+.habit-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 0;
+}
+
+.habit-grid-item {
+    padding-top: 1em;
+    margin-top: 1em;
+}
+
+/* Display of Habits */
+.habit_list {
+  
+    margin-top: 185px;
+    width: 100%;
+}
+
+#habit-list {
+    list-style-type: none;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#habit-list li {
+    text-align: left;
+    height: 35px;
+    justify-content: center;
+    padding: 3px;
+}
+
+#habit-list li a {
+    text-decoration: none;
+    padding: 2px 5px;
+    color: black;
+}
+
+#habit-list li a:hover {
+    cursor: pointer;
+}
+
+#habit-list button {
+    float: right;
+    background-color: #133E87;
+    color: #FFFCF0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#habit-list button:hover {
+    background-color: #f40c46;
+}
+
+h5 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: medium;
+    background-color: #133E87;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h5:hover {
+    background-color: lightseagreen;
+}
+
+/* Styling for the calendar */
+.calendar-container {
+    position: relative;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #133E87;
+    border: 2px solid #133E87;
+    border-radius: 15px;
+}
+
+.calendar-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+    width: calc(100% - 2rem);
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+.calendar-date {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+.day {
+    font-size: 1.7rem;
+    color: darkgreen;
+}
+.today .day {
+    color: white;    
+}
+.today {
+    background-color: #5fb0ee;
+    
+}
+
+/* Habit Progress Division */
+.habit-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: calc(100% - 2rem);
+    height: 35px;
+    border: 2px solid lightgreen;
+    border-radius: 5px;
+    margin: auto;
+    z-index: 2;
+}
+
+.habit-progress div {
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightcoral;
+}
+
+.completed {
+    background-color: darkgreen;
+}
+
+/* Style for the modal */
+/* General Modal Style */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow: auto;
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #0f4b66; /* Blue with hint of green */
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.close-button {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #f44336;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Heading */
+.modal-content.model_h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Style */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+.model_input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+.model_input:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+/* Select Input */
+.form-control {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+/* Submit Button */
+.model_btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.model_btn:hover {
+    background-color: #45a049;
+}
+
+/* Edit Modal Styling */
+#editModal .modal-content {
+    background-color: #0f4b66; /* Blue with hint of green */
+}
+
+/* Focus States */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(33, 150, 243, 0.5);
+}
+
+/* Animation for Modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav h2 {
+        font-size: 1.5rem;
+    }
+
+    .habit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .habit_list {
+        margin-left: 1em;
+        margin-right: 1em;
+        width: calc(100% - 2em);
+    }
+
+    .calendar-date {
+        width: 100%;
+    }
+}
+
+/* CSS for Streak and Count */
+table {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: separate;  /* Use separate borders to allow radius on individual cells */
+    border-radius: 10px;  /* Rounded corners for the table */
+    margin: 140px auto 0 20px;
+}
+th {
+    background-color: #133E87;
+    color: white;
+}
+td, th {
+    padding: 5px;
+    border: 1px solid #133E87; /* Make sure cells have their own borders */
+    
+}
+
+th:first-child:hover {
+    background-color:rgba(107, 33, 218, 0.5)
+}
+
+th:first-child, td:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child, td:last-child {
+    border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+
+/* Login Form */
+.loginRegistrationForm{
+    margin: 60px auto 0 auto;
+}
+.loginRegistrationForm h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.loginRegistrationForm form {
+    width: 80%;
+    margin: 0 auto;
+    background-color:rgba(33, 150, 243, 0.5);
+    border: 5px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.loginRegistrationForm .form-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.loginRegistrationForm .form-group label{
+    text-align: left;
+    width: 100px;
+}
+.loginRegistrationForm .form-group input {
+    flex: 0;
+    border: 4px solid white;
+    border-radius: 3px;
+}
+
+.loginRegistrationForm button {
+    width: 300px;
+    display: block;
+    margin: auto;
+    background-color: #2196F3;
+    height: 28px;
+    color: white;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.loginRegistrationForm button:hover {
+    background-color: #4CAF50;
+}
+
+/* Styles for Django Messages */
+/*Login Form Messages*/
+.messages {
+    list-style-type: none;  /* Removes default list styling */
+    margin: 0 0 1rem;  /* Add some margin at the bottom, no top margin */
+    padding: 0;
+}
+
+.messages li {
+    background-color: #ffcc00;  /* Background color for messages */
+    padding: 10px;
+    border-radius: 5px;  /* Rounded corners for a softer look */
+    margin-bottom: 10px;  /* Space between messages */
+    color: #333;  /* Text color */
+    font-weight: bold;  /* Optional: makes the message text bold */
+}
+
+/* Optional: Add different styles based on message tags (e.g., error or success messages) */
+.messages .error {
+    background-color: #ff4d4d; /* Red for error messages */
+    color: white;
+}
+
+.messages .success {
+    background-color: #4caf50; /* Green for success messages */
+    color: white;
+}
+
+

@@ -1,0 +1,90 @@
+{% extends "utils/base.html" %}
+
+{% block start %}
+
+<div class="habit-grid">
+    <div class="habit_list habit-grid-item">
+        <div class="messages"></div>
+        <ul id="habit-list"></ul>
+        <h5 id="newHabit" onclick="openHabitModal()">New Habit</h5>
+        
+        <div id="habitModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h2 class="modal-content model_h2">New Habit</h2>
+                <form id="habitForm" >
+                    {% csrf_token %}
+                    {% include 'utils/messages.html' %}
+                    <div class="form-group">
+                        <label for="title">Habit</label>
+                        <input class="model_input" type="text" id="title" name="title" required placeholder="e.g. Practice Guitar..">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="frequency" name="frequency" class="form-control" class="model_input">
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="model_btn">Add Habit</button>
+                </form>
+            </div>
+            
+        </div>
+        <!-- Edit Modal -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeEditModal()">&times;</span>
+                <h2 class="modal-content model_h2">Update Habit</h2>
+                <form id="editHabitForm" >
+                    {% csrf_token %}
+                    {% include 'utils/messages.html' %}
+                    <div class="form-group" id="editHabit">
+                        <label for="editTitle">Habit</label>
+                        <input class="model_input" type="text" id="editTitle" name="title" required placeholder="e.g. Practice Guitar..">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="editFrequency" name="editFrequency" class="form-control" class="model_input">
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="model_btn">Edit Habit</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="habit-grid-item">
+        <div id="calendar-container" class="calendar-container">
+            <h2>Habit Tracker Calendar</h2>
+            <div class="calendar-navigation">
+                <button id="prevBtn" class="calendar-btn">&#8592;</button>
+                <div id="calendar" class="calendar"></div>
+                <button id="nextBtn" class="calendar-btn">&#8594;</button>
+            </div>
+            <div id="habits-container" class="habits-container"></div>
+        </div> 
+    </div>
+
+    <div class="habit-grid-item streak-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Count</th>
+                    <th>Streak</th>
+                </tr>
+            </thead>
+            <tbody id="streak-list">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
